@@ -1,0 +1,11 @@
+#cloud-config
+# The proxy environment configuration will be applied to the following scopes:
+# - Console (e.g. `ros` and other user space utilites)
+# - Docker
+# - System Docker (requires reboot)
+# See: https://rancher.com/docs/os/v1.x/en/installation/networking/proxy-settings/
+rancher:
+  network:
+    http_proxy: http://proxy.sr.se:8080
+    https_proxy: http://proxy.sr.se:8080
+    no_proxy: 192.168.0.0/16,10.0.0.0/8,127.0.0.1,172.16.0.0/12,169.254.0.0/16,134.25.0.0/16,192.121.194.0/24,192.165.8.0/24,2001:67c:d8::/48,2001:678:330::/48,.sr.se,local,localhost
